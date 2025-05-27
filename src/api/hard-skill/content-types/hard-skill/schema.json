@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hard_skills",
+  "info": {
+    "singularName": "hard-skill",
+    "pluralName": "hard-skills",
+    "displayName": "Hard Skills"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Skill": {
+      "type": "string"
+    },
+    "Level": {
+      "type": "decimal",
+      "max": 100,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "min": 0,
+      "unique": false,
+      "required": true,
+      "default": 50
+    }
+  }
+}

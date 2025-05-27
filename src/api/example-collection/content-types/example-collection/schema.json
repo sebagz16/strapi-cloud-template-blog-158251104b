@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "example_collections",
+  "info": {
+    "singularName": "example-collection",
+    "pluralName": "example-collections",
+    "displayName": "Example Collection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "example_title": {
+      "type": "string"
+    }
+  }
+}
