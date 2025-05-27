@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_key_objective_key_objectives",
+  "info": {
+    "displayName": "Key Objective"
+  },
+  "options": {},
+  "attributes": {
+    "objective": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_value_core_values",
+  "info": {
+    "displayName": "Core Value"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
