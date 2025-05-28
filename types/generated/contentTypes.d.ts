@@ -454,6 +454,42 @@ export interface ApiCertificationCertification
   };
 }
 
+export interface ApiContactSectionContactSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'contact_sections';
+  info: {
+    displayName: 'Contact section';
+    pluralName: 'contact-sections';
+    singularName: 'contact-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    discord_url: Schema.Attribute.String;
+    email: Schema.Attribute.String;
+    github_url: Schema.Attribute.String;
+    linkedin_url: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-section.contact-section'
+    > &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.String;
+    phone: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slack_url: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    wapp_url: Schema.Attribute.String;
+  };
+}
+
 export interface ApiExampleCollectionExampleCollection
   extends Struct.CollectionTypeSchema {
   collectionName: 'example_collections';
@@ -524,6 +560,43 @@ export interface ApiHardSkillHardSkill extends Struct.CollectionTypeSchema {
     >;
     publishedAt: Schema.Attribute.DateTime;
     Skill: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHeroHero extends Struct.SingleTypeSchema {
+  collectionName: 'heroes';
+  info: {
+    description: '';
+    displayName: 'Hero';
+    pluralName: 'heroes';
+    singularName: 'hero';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cta_button_text: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Learn More About Me'>;
+    cv_url: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::hero.hero'> &
+      Schema.Attribute.Private;
+    pitch: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Driving exceptional ROI through data-driven media strategies and performance optimization. Specialized in multi-platform campaigns and advanced audience targeting.'>;
+    pre_title: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Senior Digital Media Buyer & Strategist|'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<"Hi, I'm Sebastian Zurschmitten">;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1115,8 +1188,10 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-section.about-section': ApiAboutSectionAboutSection;
       'api::certification.certification': ApiCertificationCertification;
+      'api::contact-section.contact-section': ApiContactSectionContactSection;
       'api::example-collection.example-collection': ApiExampleCollectionExampleCollection;
       'api::hard-skill.hard-skill': ApiHardSkillHardSkill;
+      'api::hero.hero': ApiHeroHero;
       'api::professional-experience.professional-experience': ApiProfessionalExperienceProfessionalExperience;
       'api::soft-skill.soft-skill': ApiSoftSkillSoftSkill;
       'plugin::content-releases.release': PluginContentReleasesRelease;

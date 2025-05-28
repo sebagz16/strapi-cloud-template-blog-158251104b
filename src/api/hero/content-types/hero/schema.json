@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "heroes",
+  "info": {
+    "singularName": "hero",
+    "pluralName": "heroes",
+    "displayName": "Hero",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Hi, I'm Sebastian Zurschmitten"
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "Senior Digital Media Buyer & Strategist|"
+    },
+    "pitch": {
+      "type": "text",
+      "required": false,
+      "default": "Driving exceptional ROI through data-driven media strategies and performance optimization. Specialized in multi-platform campaigns and advanced audience targeting."
+    },
+    "cta_button_text": {
+      "type": "string",
+      "required": true,
+      "default": "Learn More About Me"
+    },
+    "cv_url": {
+      "type": "string"
+    },
+    "pre_title": {
+      "type": "string"
+    }
+  }
+}
