@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "professional_experiences",
+  "info": {
+    "singularName": "professional-experience",
+    "pluralName": "professional-experiences",
+    "displayName": "Professional Experience"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "company": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "finish_date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

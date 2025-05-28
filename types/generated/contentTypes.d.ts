@@ -495,6 +495,39 @@ export interface ApiHardSkillHardSkill extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiProfessionalExperienceProfessionalExperience
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'professional_experiences';
+  info: {
+    displayName: 'Professional Experience';
+    pluralName: 'professional-experiences';
+    singularName: 'professional-experience';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    company: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    finish_date: Schema.Attribute.Date;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::professional-experience.professional-experience'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    role: Schema.Attribute.String & Schema.Attribute.Required;
+    start_date: Schema.Attribute.Date & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSoftSkillSoftSkill extends Struct.CollectionTypeSchema {
   collectionName: 'soft_skills';
   info: {
@@ -1048,6 +1081,7 @@ declare module '@strapi/strapi' {
       'api::about-section.about-section': ApiAboutSectionAboutSection;
       'api::example-collection.example-collection': ApiExampleCollectionExampleCollection;
       'api::hard-skill.hard-skill': ApiHardSkillHardSkill;
+      'api::professional-experience.professional-experience': ApiProfessionalExperienceProfessionalExperience;
       'api::soft-skill.soft-skill': ApiSoftSkillSoftSkill;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
