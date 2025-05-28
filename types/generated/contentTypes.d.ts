@@ -419,6 +419,41 @@ export interface ApiAboutSectionAboutSection
   };
 }
 
+export interface ApiCertificationCertification
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'certifications';
+  info: {
+    description: '';
+    displayName: 'Certifications';
+    pluralName: 'certifications';
+    singularName: 'certification';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    credential_url: Schema.Attribute.String;
+    date: Schema.Attribute.Date;
+    issuer: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::certification.certification'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.String;
+    logo_media: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiExampleCollectionExampleCollection
   extends Struct.CollectionTypeSchema {
   collectionName: 'example_collections';
@@ -1079,6 +1114,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-section.about-section': ApiAboutSectionAboutSection;
+      'api::certification.certification': ApiCertificationCertification;
       'api::example-collection.example-collection': ApiExampleCollectionExampleCollection;
       'api::hard-skill.hard-skill': ApiHardSkillHardSkill;
       'api::professional-experience.professional-experience': ApiProfessionalExperienceProfessionalExperience;
