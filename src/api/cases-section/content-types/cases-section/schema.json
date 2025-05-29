@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "cases_sections",
+  "info": {
+    "singularName": "cases-section",
+    "pluralName": "cases-sections",
+    "displayName": "Cases Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Cases"
+    },
+    "subtitle": {
+      "type": "text",
+      "required": false
+    }
+  }
+}

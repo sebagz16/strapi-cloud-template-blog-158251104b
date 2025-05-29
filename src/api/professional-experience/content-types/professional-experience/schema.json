@@ -4,7 +4,8 @@
   "info": {
     "singularName": "professional-experience",
     "pluralName": "professional-experiences",
-    "displayName": "Professional Experience"
+    "displayName": "Professional Experience",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -25,7 +26,7 @@
       "type": "date"
     },
     "description": {
-      "type": "text"
+      "type": "richtext"
     }
   }
 }

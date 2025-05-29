@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "certification_sections",
+  "info": {
+    "singularName": "certification-section",
+    "pluralName": "certification-sections",
+    "displayName": "Certification Section",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text"
+    }
+  }
+}

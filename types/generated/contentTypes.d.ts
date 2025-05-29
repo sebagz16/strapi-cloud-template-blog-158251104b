@@ -419,6 +419,102 @@ export interface ApiAboutSectionAboutSection
   };
 }
 
+export interface ApiCaseCase extends Struct.CollectionTypeSchema {
+  collectionName: 'cases';
+  info: {
+    description: '';
+    displayName: 'Cases';
+    pluralName: 'cases';
+    singularName: 'case';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::case.case'> &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files'>;
+    publishedAt: Schema.Attribute.DateTime;
+    story: Schema.Attribute.RichText & Schema.Attribute.Required;
+    summary: Schema.Attribute.Text;
+    technologies: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCasesSectionCasesSection extends Struct.SingleTypeSchema {
+  collectionName: 'cases_sections';
+  info: {
+    displayName: 'Cases Section';
+    pluralName: 'cases-sections';
+    singularName: 'cases-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cases-section.cases-section'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Cases'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCertificationSectionCertificationSection
+  extends Struct.SingleTypeSchema {
+  collectionName: 'certification_sections';
+  info: {
+    description: '';
+    displayName: 'Certification Section';
+    pluralName: 'certification-sections';
+    singularName: 'certification-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::certification-section.certification-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCertificationCertification
   extends Struct.CollectionTypeSchema {
   collectionName: 'certifications';
@@ -607,6 +703,7 @@ export interface ApiProfessionalExperienceProfessionalExperience
   extends Struct.CollectionTypeSchema {
   collectionName: 'professional_experiences';
   info: {
+    description: '';
     displayName: 'Professional Experience';
     pluralName: 'professional-experiences';
     singularName: 'professional-experience';
@@ -619,7 +716,7 @@ export interface ApiProfessionalExperienceProfessionalExperience
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     finish_date: Schema.Attribute.Date;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1187,6 +1284,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-section.about-section': ApiAboutSectionAboutSection;
+      'api::case.case': ApiCaseCase;
+      'api::cases-section.cases-section': ApiCasesSectionCasesSection;
+      'api::certification-section.certification-section': ApiCertificationSectionCertificationSection;
       'api::certification.certification': ApiCertificationCertification;
       'api::contact-section.contact-section': ApiContactSectionContactSection;
       'api::example-collection.example-collection': ApiExampleCollectionExampleCollection;
