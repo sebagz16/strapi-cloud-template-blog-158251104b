@@ -4,14 +4,25 @@
   "info": {
     "singularName": "example-collection",
     "pluralName": "example-collections",
-    "displayName": "Example Collection"
+    "displayName": "Example Collection",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "example_title": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

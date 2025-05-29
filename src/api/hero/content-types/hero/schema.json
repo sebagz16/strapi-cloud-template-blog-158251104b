@@ -10,31 +10,66 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "title": {
       "type": "string",
       "required": true,
-      "default": "Hi, I'm Sebastian Zurschmitten"
+      "default": "Hi, I'm Sebastian Zurschmitten",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "subtitle": {
       "type": "string",
-      "default": "Senior Digital Media Buyer & Strategist|"
+      "default": "Senior Digital Media Buyer & Strategist|",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "pitch": {
       "type": "text",
       "required": false,
-      "default": "Driving exceptional ROI through data-driven media strategies and performance optimization. Specialized in multi-platform campaigns and advanced audience targeting."
+      "default": "Driving exceptional ROI through data-driven media strategies and performance optimization. Specialized in multi-platform campaigns and advanced audience targeting.",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "cta_button_text": {
       "type": "string",
       "required": true,
-      "default": "Learn More About Me"
+      "default": "Learn More About Me",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "cv_url": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "pre_title": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

@@ -4,24 +4,45 @@
   "info": {
     "singularName": "video-section",
     "pluralName": "video-sections",
-    "displayName": "Video Section"
+    "displayName": "Video Section",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
   },
   "attributes": {
     "title": {
       "type": "string",
       "required": false,
-      "default": "Get To Know Me"
+      "default": "Get To Know Me",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "subtitle": {
       "type": "text",
-      "default": "Take 2-3 minutes to learn about my journey, passion for digital media buying, and what drives me to deliver exceptional results for clients."
+      "default": "Take 2-3 minutes to learn about my journey, passion for digital media buying, and what drives me to deliver exceptional results for clients.",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "video_url": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

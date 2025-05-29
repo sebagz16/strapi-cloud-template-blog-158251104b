@@ -10,49 +10,114 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "email": {
       "type": "string",
-      "required": false
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "phone": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "location": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "github_url": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "linkedin_url": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "wapp_url": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "slack_url": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "discord_url": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "title": {
       "type": "string",
       "required": true,
-      "default": "Get In Touch"
+      "default": "Get In Touch",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "subtitle": {
       "type": "text",
-      "default": "Ready to discuss your next media buying strategy? Let's connect and explore how we can drive exceptional results for your campaigns."
+      "default": "Ready to discuss your next media buying strategy? Let's connect and explore how we can drive exceptional results for your campaigns.",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "secondary_title": {
       "type": "string",
       "required": true,
-      "default": "Let's Discuss Your Growth Strategy"
+      "default": "Let's Discuss Your Growth Strategy",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "secondary_subtitle": {
       "type": "string",
-      "default": "Whether you're looking to scale existing campaigns, explore new channels, or optimize your media mix, I'm here to help drive your business forward with data-driven strategies."
+      "default": "Whether you're looking to scale existing campaigns, explore new channels, or optimize your media mix, I'm here to help drive your business forward with data-driven strategies.",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
