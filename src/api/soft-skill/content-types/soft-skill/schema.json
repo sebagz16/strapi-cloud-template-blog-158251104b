@@ -4,7 +4,8 @@
   "info": {
     "singularName": "soft-skill",
     "pluralName": "soft-skills",
-    "displayName": "Soft Skills"
+    "displayName": "Soft Skills",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,13 +18,23 @@
   "attributes": {
     "Skill": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Level": {
       "type": "decimal",
       "min": 0,
       "max": 100,
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

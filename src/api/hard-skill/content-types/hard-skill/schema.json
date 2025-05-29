@@ -4,7 +4,8 @@
   "info": {
     "singularName": "hard-skill",
     "pluralName": "hard-skills",
-    "displayName": "Hard Skills"
+    "displayName": "Hard Skills",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,14 +17,19 @@
   },
   "attributes": {
     "Skill": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Level": {
       "type": "decimal",
       "max": 100,
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "min": 0,

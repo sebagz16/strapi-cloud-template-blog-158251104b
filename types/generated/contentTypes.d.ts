@@ -809,6 +809,7 @@ export interface ApiExampleCollectionExampleCollection
 export interface ApiHardSkillHardSkill extends Struct.CollectionTypeSchema {
   collectionName: 'hard_skills';
   info: {
+    description: '';
     displayName: 'Hard Skills';
     pluralName: 'hard-skills';
     singularName: 'hard-skill';
@@ -829,7 +830,7 @@ export interface ApiHardSkillHardSkill extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }> &
       Schema.Attribute.SetMinMax<
@@ -846,7 +847,12 @@ export interface ApiHardSkillHardSkill extends Struct.CollectionTypeSchema {
       'api::hard-skill.hard-skill'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    Skill: Schema.Attribute.String;
+    Skill: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -998,6 +1004,7 @@ export interface ApiProfessionalExperienceProfessionalExperience
 export interface ApiSoftSkillSoftSkill extends Struct.CollectionTypeSchema {
   collectionName: 'soft_skills';
   info: {
+    description: '';
     displayName: 'Soft Skills';
     pluralName: 'soft-skills';
     singularName: 'soft-skill';
@@ -1016,6 +1023,11 @@ export interface ApiSoftSkillSoftSkill extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     Level: Schema.Attribute.Decimal &
       Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Schema.Attribute.SetMinMax<
         {
           max: 100;
@@ -1029,7 +1041,13 @@ export interface ApiSoftSkillSoftSkill extends Struct.CollectionTypeSchema {
       'api::soft-skill.soft-skill'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    Skill: Schema.Attribute.String & Schema.Attribute.Required;
+    Skill: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
