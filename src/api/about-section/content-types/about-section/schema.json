@@ -49,6 +49,14 @@
       "components": [
         "key-objective.key-objective"
       ]
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "About me"
+    },
+    "subtitle": {
+      "type": "text"
     }
   }
 }

@@ -27,6 +27,14 @@
     },
     "description": {
       "type": "richtext"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

@@ -413,6 +413,10 @@ export interface ApiAboutSectionAboutSection
     name: Schema.Attribute.String & Schema.Attribute.Required;
     photo: Schema.Attribute.Media<'images' | 'files'>;
     publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'About me'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -554,6 +558,7 @@ export interface ApiContactSectionContactSection
   extends Struct.CollectionTypeSchema {
   collectionName: 'contact_sections';
   info: {
+    description: '';
     displayName: 'Contact section';
     pluralName: 'contact-sections';
     singularName: 'contact-section';
@@ -578,7 +583,17 @@ export interface ApiContactSectionContactSection
     location: Schema.Attribute.String;
     phone: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    secondary_subtitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<"Whether you're looking to scale existing campaigns, explore new channels, or optimize your media mix, I'm here to help drive your business forward with data-driven strategies.">;
+    secondary_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<"Let's Discuss Your Growth Strategy">;
     slack_url: Schema.Attribute.String;
+    subtitle: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<"Ready to discuss your next media buying strategy? Let's connect and explore how we can drive exceptional results for your campaigns.">;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Get In Touch'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -724,6 +739,7 @@ export interface ApiProfessionalExperienceProfessionalExperience
       'api::professional-experience.professional-experience'
     > &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files'>;
     publishedAt: Schema.Attribute.DateTime;
     role: Schema.Attribute.String & Schema.Attribute.Required;
     start_date: Schema.Attribute.Date & Schema.Attribute.Required;
@@ -771,6 +787,38 @@ export interface ApiSoftSkillSoftSkill extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiVideoSectionVideoSection extends Struct.SingleTypeSchema {
+  collectionName: 'video_sections';
+  info: {
+    displayName: 'Video Section';
+    pluralName: 'video-sections';
+    singularName: 'video-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::video-section.video-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Take 2-3 minutes to learn about my journey, passion for digital media buying, and what drives me to deliver exceptional results for clients.'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Get To Know Me'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video_url: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -1294,6 +1342,7 @@ declare module '@strapi/strapi' {
       'api::hero.hero': ApiHeroHero;
       'api::professional-experience.professional-experience': ApiProfessionalExperienceProfessionalExperience;
       'api::soft-skill.soft-skill': ApiSoftSkillSoftSkill;
+      'api::video-section.video-section': ApiVideoSectionVideoSection;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

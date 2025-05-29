@@ -4,7 +4,8 @@
   "info": {
     "singularName": "contact-section",
     "pluralName": "contact-sections",
-    "displayName": "Contact section"
+    "displayName": "Contact section",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -34,6 +35,24 @@
     },
     "discord_url": {
       "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Get In Touch"
+    },
+    "subtitle": {
+      "type": "text",
+      "default": "Ready to discuss your next media buying strategy? Let's connect and explore how we can drive exceptional results for your campaigns."
+    },
+    "secondary_title": {
+      "type": "string",
+      "required": true,
+      "default": "Let's Discuss Your Growth Strategy"
+    },
+    "secondary_subtitle": {
+      "type": "string",
+      "default": "Whether you're looking to scale existing campaigns, explore new channels, or optimize your media mix, I'm here to help drive your business forward with data-driven strategies."
     }
   }
 }

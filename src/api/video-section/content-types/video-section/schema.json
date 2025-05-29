@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "video_sections",
+  "info": {
+    "singularName": "video-section",
+    "pluralName": "video-sections",
+    "displayName": "Video Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false,
+      "default": "Get To Know Me"
+    },
+    "subtitle": {
+      "type": "text",
+      "default": "Take 2-3 minutes to learn about my journey, passion for digital media buying, and what drives me to deliver exceptional results for clients."
+    },
+    "video_url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
