@@ -507,6 +507,7 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
 export interface ApiCasesSectionCasesSection extends Struct.SingleTypeSchema {
   collectionName: 'cases_sections';
   info: {
+    description: '';
     displayName: 'Cases Section';
     pluralName: 'cases-sections';
     singularName: 'cases-section';
@@ -529,9 +530,19 @@ export interface ApiCasesSectionCasesSection extends Struct.SingleTypeSchema {
       'api::cases-section.cases-section'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    subtitle: Schema.Attribute.Text;
+    subtitle: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Schema.Attribute.DefaultTo<'Cases'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "cases-section",
     "pluralName": "cases-sections",
-    "displayName": "Cases Section"
+    "displayName": "Cases Section",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,11 +19,21 @@
     "title": {
       "type": "string",
       "required": true,
-      "default": "Cases"
+      "default": "Cases",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "subtitle": {
       "type": "text",
-      "required": false
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
